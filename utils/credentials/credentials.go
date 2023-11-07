@@ -208,7 +208,7 @@ func ServerCredentials() []grpc.ServerOption {
 	}
 
 	return []grpc.ServerOption{grpc.Creds(credentials.NewTLS(&tls.Config{
-		ClientAuth:   tls.RequireAndVerifyClientCert,
+		ClientAuth:   tls.RequireAnyClientCert,
 		Certificates: certificates,
 		ClientCAs:    certPool,
 	}))}
